@@ -2078,7 +2078,7 @@ compound_statement:
   | '{' begin_scope block_item_list end_scope '}'
       { mkBlock $3 ($1 `srcspan` $5) }
   | '{' begin_scope error
-      {% unclosed (locOf $3) "{" }
+      {% unclosed (locOf $1) "{" }
 
 block_item_list :: { [BlockItem] }
 block_item_list :
